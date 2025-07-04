@@ -34,13 +34,9 @@ int main(int argc, char* argv[]){
 
     sort(files.begin(), files.end());
 
-    for(const auto& file: files){
-        cout << "Archivos a concatenar: " << file << endl;
-    }
-
     //Inicio de la concatenacion para los archivos particionados
     //Creamos la ruta del archivo de salida
-    fs::path output_path = fs::path("../datasets/Concatenated") / ("concatenated_" + string(argv[2]) + "_" + to_string(num_files) + ".txt");
+    fs::path output_path = fs::path("../datasets/Concatenated") / ("concatenated_" + string(argv[2]) + "_" + to_string(num_files));
     
     //Creacion del archivo de salida
     ofstream output(output_path, ios::out);
